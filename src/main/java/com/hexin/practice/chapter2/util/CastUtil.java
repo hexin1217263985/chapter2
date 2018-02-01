@@ -10,7 +10,7 @@ public final class CastUtil {
      * 转为String型
      */
     public static String castString(Object obj) {
-        return String.valueOf(obj);
+        return String.valueOf(obj).trim();
     }
     /**
      * 转为String型（提供默认值）
@@ -56,5 +56,12 @@ public final class CastUtil {
      */
     public static int castInt(Object obj, int defaultValue) {
         return obj == null ? defaultValue : castInt(obj);
+    }
+
+    /**
+     * 转为boolean型
+     */
+    public static boolean castBoolean(Object obj) {
+        return Boolean.parseBoolean(String.valueOf(obj).trim());
     }
 }
